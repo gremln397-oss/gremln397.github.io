@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#0f0f12;padding:20px;font-family:Arial,sans-serif;color:#eee;}
+        .grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+        .card{background:#1e1e24;border-radius:14px;padding:16px;border:1px solid #2c2c34;}
+        .header,.footer{grid-column:1/-1;background:#1e1e24;border-radius:14px;padding:16px;text-align:center;}
+        h1{color:#ff8c1a;font-size:28px;}
+        h2{color:#ffa042;font-size:18px;margin:0 0 12px;border-left:3px solid #f57c00;padding-left:10px;}
+        .items{display:flex;flex-wrap:wrap;gap:8px;}
+        .item{background:#2c2c36;padding:5px 12px;border-radius:20px;font-size:13px;}
+        table{width:100%;border-collapse:collapse;}
+        th,td{border:1px solid #333;padding:6px;font-size:12px;text-align:left;}
+        th{background:#f57c00;color:#000;}
+        button{background:#ff8c1a;border:none;padding:8px;font-weight:bold;border-radius:30px;cursor:pointer;width:100%;margin-top:12px;}
+        .tip{background:#25252f;padding:10px;border-radius:12px;margin-top:12px;font-size:13px;display:none;border-left:3px solid #ff8c1a;}
+        .tip.show{display:block;}
+        .ad{grid-column:span 2;background:linear-gradient(95deg,#1f2a1f,#0b1a0e);border-radius:14px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+        .ad-text h3{color:#ffbc6e;font-size:16px;}
+        .ad-text p{font-size:12px;color:#ddd;}
+        .ad-btn{background:#ff8c1a;padding:6px 20px;border-radius:40px;font-weight:bold;font-size:13px;text-decoration:none;color:#000;}
+        max-width:800px{.grid{grid-template-columns:repeat(2,1fr);}.ad{grid-column:span 2;}}
+        max-width:500px{.grid{grid-template-columns:1fr;}.ad{grid-column:span 1;}}
+        p{font-size:13px;margin:5px 0;}
+        .footer{font-size:12px;color:#888;}
+    </style>
+</head>
+<body>
+<div class="grid">
+    <div class="header">
+        <h1>COUNTER-STRIKE 2</h1>
+        <p>Бесплатное обновление CS:GO на Source 2. Новые дымы, улучшенная графика, субтик-сервера.</p>
+    </div>
+
+    <div class="ad" id="ad1">
+        <div><span style="font-size:28px;"></span></div>
+        <div class="ad-text"><h3>🔥 Скины CS2 -30%</h3><p>Ножи, перчатки, AWP | Драконья мука</p></div>
+        <a href="#" class="ad-btn" id="btn1">Купить →</a>
+    </div>
+
+    <div class="card"><h2>Об игре</h2><p>CS2 — эволюция шутера. Реалистичные дымы, переработанная физика, Premier Mode и новые карты.</p></div>
+    <div class="card"><h2>Оружие</h2><div class="items"><span class="item">AK-47</span><span class="item">M4A1-S</span><span class="item">AWP</span><span class="item">Desert Eagle</span><span class="item">USP-S</span><span class="item">Glock-18</span></div></div>
+    <div class="card"><h2>Карты</h2><div class="items"><span class="item">Mirage</span><span class="item">Inferno</span><span class="item">Nuke</span><span class="item">Ancient</span><span class="item">Anubis</span></div></div>
+    <div class="card"><h2>Ранги</h2><table><tr><th>Ранг</th><th>Уровень</th></tr><tr><td>Silver 1 - Elite Master</td><td>Серебро</td></tr><tr><td>Gold Nova 1 - Master</td><td>Золото</td></tr><tr><td>Master Guardian 1 - Elite</td><td>Мастер</td></tr><tr><td>Legendary Eagle - Supreme</td><td>Легенда</td></tr><tr><td>The Global Elite</td><td>Глобал</td></tr></table></div>
+
+    <div class="ad" style="background:linear-gradient(95deg,#1e1a2f,#0c0a18);">
+        <div><span style="font-size:28px;"></span></div>
+        <div class="ad-text"><h3>CS2MARKET | Обмен скинов</h3><p>Без комиссии. 5000+ предметов. Лучшие цены.</p></div>
+        <a href="#" class="ad-btn" id="btn2">Обменять →</a>
+    </div>
+
+    <div class="card"><h2>Советы</h2><p> eDPI 800-1200</p><p> Учи спреи AK/M4</p><p>
+
+
+с командой</p><button id="tipBtn">Показать совет</button><div id="tipMsg" class="tip"> Counter-strafing: нажми противоположную клавишу для мгновенной остановки перед стрельбой.</div></div>
+    <div class="card"><h2>Турниры</h2><div class="items"><span class="item">IEM Katowice 2025</span><span class="item">BLAST Premier</span><span class="item">ESL Pro League</span><span class="item">Major Copenhagen</span></div><p style="margin-top:8px;">📺 Смотри трансляции с дропами</p></div>
+
+    <div class="ad" style="background:linear-gradient(95deg,#221c12,#191209);">
+        <div><span style="font-size:28px;"></span></div>
+        <div class="ad-text"><h3>CS2 BOOST | Тренер + ранг</h3><p>Прокачка Premier. Повысь ранг за 7 дней!</p></div>
+        <a href="#" class="ad-btn" id="btn3">Записаться →</a>
+    </div>
+
+    <div class="footer">Counter-Strike 2 · Valve · Бесплатно в Steam · Новые кейсы и операция уже скоро</div>
+</div>
+
+<script>
+    // совет
+    const btn=document.getElementById('tipBtn'), tip=document.getElementById('tipMsg');
+    btn.onclick=()=>{tip.classList.toggle('show'); btn.textContent=tip.classList.contains('show')?'Скрыть совет':'Показать совет';};
+    // рекламные клики
+    document.getElementById('btn1')?.addEventListener('click',(e)=>{e.preventDefault(); alert('🔥 Скины CS2: переходи на маркет!');});
+    document.getElementById('btn2')?.addEventListener('click',(e)=>{e.preventDefault(); alert('💰 CS2MARKET: обмен без комиссии!');});
+    document.getElementById('btn3')?.addEventListener('click',(e)=>{e.preventDefault(); alert('🏅 CS2 BOOST: жди связи с тренером!');});
+    // ротация баннера 1 (смена текста)
+    const adBlock=document.getElementById('ad1');
+    const adTitle=adBlock?.querySelector('h3'), adDesc=adBlock?.querySelector('p');
+    const ads=[{title:' Скины CS2 -30%',desc:'Ножи, перчатки, AWP | Драконья мука'},{title:' Новая операция',desc:'Боевой пропуск + эксклюзивные награды'},{title:' Ежедневные дропы',desc:'Бесплатные кейсы и ключи каждый день'}];
+    let idx=0;
+    setInterval(()=>{idx=(idx+1)%ads.length; if(adTitle&&adDesc){adTitle.innerText=ads[idx].title; adDesc.innerText=ads[idx].desc;}},10000);
+</script>
+</body>
+</html> 
